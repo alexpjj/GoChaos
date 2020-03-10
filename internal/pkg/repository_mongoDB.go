@@ -73,7 +73,7 @@ func (repo *MongoRepository) Update(collection string, key string, value string,
 /*
 Create creates a single document
 */
-func (repo *MongoRepository) Create(collection string, key string, doc interface{}) error {
+func (repo *MongoRepository) Create(collection string, doc interface{}) error {
 	_, err := repo.getCollection(collection).InsertOne(context.TODO(), doc)
 	if err != nil {
 		return err
